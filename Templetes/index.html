@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('lg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 80%;
+            align-self: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 36px;
+            font-family: "Harlow Solid Italic", cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-container {
+            background-color: white;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .h2 {
+            font-size: 17px;
+            color: black;
+            text-align: center;
+            align-items: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-media-container {
+            background-color: black;
+            padding: 5px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        .social-media a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .location {
+            text-align: center;
+            color: white;
+        }
+
+        .logo-container {
+            background-color: white;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 150px;
+        }
+
+        .product-item {
+            text-align: left;
+        }
+
+        .price-item {
+            text-align: right;
+        }
+
+        button {
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 0px 5px;
+            color: #333;
+            background: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .location-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div style="align-self: center;">
+            <h1>Skin Care Clinic</h1>
+        </div>
+        <div>
+            <div class="logo-container">
+                <img src="face.png" alt="Logo" class="logo">
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <div class="product-list" style="text-align: left; flex: 1;">
+                <p>Double Chin Reduction</p>
+                <p>Laser Hair Removal</p>
+                <p>Medical Grade Skin</p>
+                <p>Double Chin Reduction</p>
+                <p>Laser Hair Removal</p>
+                <p>Medical Grade Skin</p>
+            </div>
+            <div class="price-item">
+                <p>$ 25</p>
+                <p>$ 25</p>
+                <p>$ 25</p>
+                <p>$ 25</p>
+                <p>$ 25</p>
+                <p>$ 25</p>
+            </div>
+        </div>
+        <div style="align-self: center;">
+            <button style="font-size: 11px;">CHECK OUT OUR PRICES</button>
+        </div>
+        <div style="align-self: center;bottom:10px;">
+            <p style="font-size: 20px;font-weight: bold;background-color: grey;padding: 0px 10px ;border-radius: 20px;">OFFERS 20% OFF</p>
+        </div>
+        <p style="font-size: 16px;align-self: center;">SHORT $150 - MEDIUM $200 - LONG $100</p>
+
+        <div class="location">
+            <div class="location-icon">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Location .......</span>
+            </div>
+        </div>
+        <div class="social-media">
+            <div class="social-media-container">
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="social-media-container">
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="social-media-container">
+                <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="social-media-container">
+                <a href="https://www.whatsapp.com/"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
