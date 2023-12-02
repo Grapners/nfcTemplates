@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #BE2F1F;
+        }
+
+        .cover {
+            position: relative;
+            height: 200px;
+            background: url('') no-repeat center center;
+            background-size: cover;
+        }
+
+        .profile-pic {
+            position: absolute;
+            bottom: -70px;
+            /* Adjusted to place it below the bottom line of the cover image */
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            border: 10px solid rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+        }
+
+        .info {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            margin: 0 auto;
+            border-radius: 8px;
+            position: relative;
+            top: 50px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            font-size: 14px;
+            color: #ffffff;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+
+        .contact-buttons {
+            margin-top: 20px;
+        }
+
+        .contact-btn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 8px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .contact-buttons a:hover {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        .icon-container {
+            text-align: center;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 5vh;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            width: 100%;
+            margin-left: 0%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon {
+            margin: 1vh;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .qr-code {
+            height: 15vh;
+            width: 15vh;
+            margin-top: 5vh;
+            display: flex;
+            margin-left: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .icon-container {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;">
+
+
+        <div class="cover">
+            <div class="profile-pic"></div>
+        </div>
+
+        <div class="info">
+            <div class="name"></div>
+            <div class="job-title"></div>
+
+            <div class="contact-buttons">
+                <a href="#" class="contact-btn">Save Contact</a>
+                <a href="#" class="contact-btn">Exchange Contact</a>
+            </div>
+
+            <div class="basicInfo">
+                <ul style="list-style-type: none; text-align: left;" id="iAmList">
+               </ul>
+            </div>
+
+            <div class="icon-container">
+            </div>
+
+            <div class="about">
+                <div class="about-info">
+                    <h3>About Us</h3><br>
+                    <div class="aboutDetails"></div>
+                    <br>
+                </div>
+            </div>
+
+            <img id="qrCode" style="height: 100px; width: 100px;">
+        </div>
+    </div>
+
+        <script>
+            const imageLinks = ["https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png",
+                "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png",
+                "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Tumblr2_colored_svg-128.png",
+                "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png",
+                "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png",
+                "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png"]
+
+            const infoIcons = ["fa-mobile-phone", "fa-whatsapp", "fa-envelope", "fa-globe", "fa-location-arrow"]
+
+            const profileData = {
+                coverPhotoLink: "https://images.inc.com/uploaded_files/image/1920x1080/getty_509107562_2000133320009280346_351827.jpg",
+                profilePicLink: "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+                name: "John Doe",
+                jobTitle: "Developer",
+                contactButtons: [
+                    { vcfLink: "03323427787" },
+                    { vcfLink: "03323427787" }
+                ],
+                basicInfo: [
+                    { value: "+92 3323427787" },
+                    { value: "+92 3323427787" },
+                    { value: "nfcbizpro@gmail.com" },
+                    { value: "www.nfcbiz.com" },
+                    { value: "Birmingham, United Kingdom" }
+                ],
+                socialIcons: [
+                    { link: "https://www.facebook.com/" },
+                    { link: "https://www.linkedin.com/" },
+                    { link: "https://www.tumblr.com/" },
+                    { link: "https://twitter.com/" },
+                    { link: "https://www.youtube.com/" },
+                    { link: "https://www.instagram.com/" },
+                ],
+                about: "Near Field Communication (NFC) technology has emerged as a transformative force in the business landscape, offering a seamless and efficient way for devices to communicate and share information over short distances.",
+                qr: "https://placekitten.com/1200/1400",
+            };
+
+            document.querySelector('.cover').style.backgroundImage = `url('${profileData.coverPhotoLink}')`;
+            document.querySelector('.profile-pic').style.backgroundImage = `url('${profileData.profilePicLink}')`;
+
+            document.querySelector('.name').textContent = profileData.name;
+            document.querySelector('.job-title').textContent = profileData.jobTitle;
+
+            var j = 0;
+            var basicInfoList = document.getElementById("iAmList");
+
+            profileData.basicInfo.forEach(function (item) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = `<i class="fa ${infoIcons[j]}" style="font-size:30px; margin-top: 15px; color:white; margin-right: 10px;"></i> ${item.value}`;
+                j++
+                basicInfoList.appendChild(listItem);
+            });
+
+
+            const iconContainer = document.querySelector('.icon-container');
+            var i = 0;
+            profileData.socialIcons.forEach(icon => {
+
+                const img = document.createElement('img');
+                img.src = imageLinks[i];
+                i++;
+                img.alt = '';
+                img.style.height = '4.25vh';
+                img.style.width = '4.25vh';
+
+                const div = document.createElement('div');
+                div.classList.add('icon');
+                if (icon.link) {
+                    div.onclick = function () {
+                        window.open(icon.link);
+                    };
+                }
+
+                div.appendChild(img);
+                iconContainer.appendChild(div);
+            });
+
+            document.querySelector('.aboutDetails').innerText = profileData.about;
+
+            qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + profileData.qr;
+
+        </script>
+
+</body>
+
+
+
+</html>

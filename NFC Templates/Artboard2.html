@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #159F85;
+        }
+
+        .cover {
+            position: relative;
+            height: 200px;
+            background: url('') no-repeat center center;
+            background-size: cover;
+        }
+
+        .profile-pic {
+            position: absolute;
+            bottom: -10vh;
+            left: 25%;
+            transform: translateX(-50%);
+            border-radius: 25%;
+            border: 15px solid rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            width: 15vw;
+            height: 15vw;
+            max-width: 150px;
+            max-height: 150px;
+        }
+
+        .info {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            border-radius: 8px;
+            position: relative;
+            top: 5vh;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .name {
+            font-size: 3vh;
+            font-weight: bold;
+            margin-bottom: 1vh;
+            margin-top: -5vh;
+            margin-right: -12vh;
+        }
+
+        .job-title {
+            color: rgb(255, 255, 255);
+            margin-bottom: 1vh;
+            margin-right: -12vh;
+        }
+
+        .contact-buttons {
+            margin-top: 20px;
+        }
+
+        .contact-btn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 8px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .contact-buttons a:hover {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        .icon-container {
+            text-align: center;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 5vh;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            width: 100%;
+            margin-left: 0%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon {
+            margin: 1vh;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .card {
+            max-width: 100%;
+            margin: 5vh auto;
+            padding: 2vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5%;
+            overflow: hidden;
+            border: 1px solid white;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card-content {
+            padding: 2vh;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2vh;
+        }
+
+        .button {
+            padding: 2vh 4vw;
+            border-radius: 5px;
+            background-color: transparent;
+            width: 48%;
+            margin-bottom: 1vh;
+        }
+
+        .button.price {
+            border: 1px solid #f34949;
+            color: #f34949;
+        }
+
+        .button.enquire {
+            border: 1px solid #f34949;
+            color: #f34949;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #ffffff;
+            padding: 2vh;
+        }
+
+        .enquiryForm input,
+        .enquiryForm textarea {
+            border: 1px solid white;
+            background-color: transparent;
+            width: 100%;
+            padding: 2vh;
+            box-sizing: border-box;
+            margin-bottom: 2vh;
+        }
+
+        .enquiryForm input[type="submit"] {
+            width: 30%;
+            height: 5vh;
+        }
+
+        .qr-code {
+            height: 15vh;
+            width: 15vh;
+            margin-top: 5vh;
+            display: flex;
+            margin-left: 50%;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .profile-pic {
+                width: 30vw;
+                height: 30vw;
+                max-width: 100px;
+                max-height: 100px;
+            }
+
+            .icon-container {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .name {
+                margin-left: 0;
+                font-size: 2vh;
+            }
+
+            .job-title {
+                margin-left: 0;
+            }
+
+            .contact-btn {
+                width: 100%;
+            }
+
+            .icon-container {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .card {
+                max-width: 100%;
+            }
+
+            .enquiryForm input[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;">
+
+
+        <div class="cover">
+            <div class="profile-pic"></div>
+        </div>
+
+        <div class="info">
+            <div class="name"></div>
+            <div class="job-title"></div>
+
+            <div class="contact-buttons">
+                <a href="#" class="contact-btn">Save Contact</a>
+                <a href="#" class="contact-btn">Exchange Contact</a>
+            </div>
+
+            <div class="icon-container">
+            </div>
+
+            <h1 style="text-align: center;">Products and Services</h1>
+            <div class="productService">
+
+            </div>
+
+            <div class="enquiryForm">
+                <h1 style="text-align: center;">Enquiry Form</h1>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Phone No."><br>
+                <input type="email" placeholder="Email"><br>
+                <textarea placeholder="Message" rows="3"></textarea><br>
+                <input type="submit" value="Send" style="color: white;">
+            </div>
+
+            <img id="qrCode" style="height: 100px; width: 100px;">
+        </div>
+    </div>
+
+    <script>
+        const imageLinks = ["https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Tumblr2_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png"]
+
+        const profileData = {
+            coverPhotoLink: "https://images.inc.com/uploaded_files/image/1920x1080/getty_509107562_2000133320009280346_351827.jpg",
+            profilePicLink: "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+            name: "John Doe",
+            jobTitle: "Software Engineer",
+            contactButtons: [
+                { vcfLink: "03323427787" },
+                { vcfLink: "03323427787" }
+            ],
+            socialIcons: [
+                { link: "https://www.facebook.com/" },
+                { link: "https://www.linkedin.com/" },
+                { link: "https://www.tumblr.com/" },
+                { link: "https://twitter.com/" },
+                { link: "https://www.youtube.com/" },
+                { link: "https://www.instagram.com/" },
+            ],
+            products: [
+                {
+                    imageUrl: "https://www.creativefaze.com/sites/default/files/21954543_l.jpg",
+                    price: 999,
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et consectetur libero. Proin nec ullamcorper neque. Nullam ullamcorper libero vitae diam cursus, in euismod augue fermentum."
+                },
+                {
+                    imageUrl: "https://www.creativefaze.com/sites/default/files/21954543_l.jpg",
+                    price: 999,
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et consectetur libero. Proin nec ullamcorper neque. Nullam ullamcorper libero vitae diam cursus, in euismod augue fermentum."
+                }
+            ],
+            qr: "https://placekitten.com/1200/1400",
+        };
+
+        // Update cover photo and profile image links dynamically in CSS
+        document.querySelector('.cover').style.backgroundImage = `url('${profileData.coverPhotoLink}')`;
+        document.querySelector('.profile-pic').style.backgroundImage = `url('${profileData.profilePicLink}')`;
+
+        // Update content dynamically
+        document.querySelector('.name').textContent = profileData.name;
+        document.querySelector('.job-title').textContent = profileData.jobTitle;
+
+        // Update social icons dynamically
+        const iconContainer = document.querySelector('.icon-container');
+        var i = 0;
+        profileData.socialIcons.forEach(icon => {
+
+            const img = document.createElement('img');
+            img.src = imageLinks[i];
+            i++;
+            img.alt = '';
+            img.style.height = '4.25vh';
+            img.style.width = '4.25vh';
+
+            const div = document.createElement('div');
+            div.classList.add('icon');
+
+            // Check if the data link is available before setting the onclick event
+            if (icon.link) {
+                div.onclick = function () {
+                    window.open(icon.link);
+                };
+            }
+
+            div.appendChild(img);
+            iconContainer.appendChild(div);
+        });
+
+        const cardContainer = document.querySelector('.productService');
+        profileData.products.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <img src="${product.imageUrl}" alt="Card Image">
+                <div class="card-content">
+                    <div class="button-container">
+                        <button class="button price">Price: ${product.price}</button>
+                        <button class="button enquire">Enquire</button>
+                    </div>
+                    <p>${product.description}</p>
+                </div>`;
+            cardContainer.appendChild(card);
+        });
+
+        qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + profileData.qr;
+    </script>
+</body>
+
+</html>

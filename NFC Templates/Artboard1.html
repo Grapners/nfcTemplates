@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            /* Light gray background */
+        }
+
+        .cover {
+            position: relative;
+            height: 200px;
+            background: url('https://placekitten.com/1200/400') no-repeat center center;
+            background-size: cover;
+        }
+
+        .profile-pic {
+            position: absolute;
+            bottom: -70px;
+            /* Adjusted to place it below the bottom line of the cover image */
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            border: 2px solid white;
+            overflow: hidden;
+            background: url('https://placekitten.com/100/100') no-repeat center center;
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+        }
+
+        .info {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            margin: 0 auto;
+            border-radius: 8px;
+            position: relative;
+            top: 50px;
+            margin-top: 35px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: #c0baba;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            font-size: 14px;
+            color: #c0baba;
+            margin-bottom: 20px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            margin-top: 35px;
+
+        }
+
+        .contact-btn {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .buttonsContact a:hover {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        .icon-container {
+            text-align: center;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 35px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .icon {
+            margin: 10px;
+            color: inherit;
+        }
+
+        .website {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 35px;
+            border: 1px solid white;
+        }
+
+        .website-icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .website-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .website-name {
+            font-weight: bold;
+        }
+
+        .email {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 35px;
+            border: 1px solid white;
+        }
+
+        .email-icon {
+            /* margin-right: 10px; */
+            font-size: 24px;
+        }
+
+        .email-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .email-name {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <div>
+
+    
+    <div class="cover">
+        <div class="profile-pic"></div>
+    </div>
+
+    <div class="info">
+        <div class="name">John Doe</div>
+        <div class="job-title">Software Engineer</div>
+        <div class="about">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+        </div>
+
+        <div class="contact-buttons">
+            <div class="row buttonsContact">
+                <a href="#" class="contact-btn w-50 col-sm-6">Save Contact</a>
+                <a href="#" class="contact-btn w-50 col-sm-6">Exchange Contact</a>
+            </div>
+        </div>
+
+        <div class="icon-container" style="display: flex;  justify-content: center;">
+            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png"  style=" height: 40px; width: 40px;" alt=""></div>
+            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
+            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Tumblr2_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
+            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
+            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
+            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
+        </div>
+
+        <div class="website">
+            <div class="website-icon"><img
+                    src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+                    alt="Website Icon" style="width: 150px; height: 150px; border-radius: 25%;"></div>
+            <div class="website-info">
+                <div class="website-name">NFC Biz</div><br>
+                <div>
+                    Near Field Communication (NFC) technology has emerged as a transformative force in the business
+                    landscape, offering a seamless and efficient way for devices to communicate and share information
+                    over short distances.</div>
+            </div>
+        </div>
+
+        <div class="email" style="display: flex; justify-content: space-between;">
+            <div class="email-icon"><img
+                    src="https://cdn.pixabay.com/photo/2014/04/03/09/58/email-309491_640.png"
+                    alt="Eamil Icon" style="width: 100px; height: 100px; border-radius: 25%;"></div>
+            <div class="email-info" style="margin-right: 100px; margin-top: 20px;">
+                <div class="email-name">Email Me Here</div><br>
+                <div style="text-decoration: none;">
+                    <a href="mailto:info@nfcbiz.com" style="text-decoration: none; color: white;">info@nfcbiz.com</a></div>
+            </div>
+        </div>
+
+        <div class="qr-code" style="height: 100px; width: 100px; margin-top: 35px; display: flex; margin-left: 40%;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=www.example.com" alt="QR Code" class="qr-img">
+        </div>
+    </div>
+
+</body>
+
+</html>
