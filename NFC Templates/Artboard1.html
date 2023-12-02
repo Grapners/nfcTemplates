@@ -18,20 +18,19 @@
         .cover {
             position: relative;
             height: 200px;
-            background: url('https://placekitten.com/1200/400') no-repeat center center;
+            background: url('') no-repeat center center;
             background-size: cover;
         }
 
         .profile-pic {
             position: absolute;
             bottom: -70px;
-            /* Adjusted to place it below the bottom line of the cover image */
             left: 50%;
             transform: translateX(-50%);
             border-radius: 50%;
             border: 2px solid white;
             overflow: hidden;
-            background: url('https://placekitten.com/100/100') no-repeat center center;
+            background: url('') no-repeat center center;
             background-size: cover;
             width: 150px;
             height: 150px;
@@ -67,23 +66,19 @@
         }
 
         .contact-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-            margin-top: 35px;
-
+            margin-top: 20px;
         }
 
         .contact-btn {
-            background-color: black;
+            background-color: transparent;
             color: white;
             border: 1px solid white;
-            padding: 8px 16px;
+            padding: 8px 8px;
             border-radius: 5px;
             text-decoration: none;
         }
 
-        .buttonsContact a:hover {
+        .contact-buttons a:hover {
             background-color: #f8f9fa;
             color: black;
         }
@@ -92,14 +87,19 @@
             text-align: center;
             display: flex;
             background-color: rgba(255, 255, 255, 0.8);
-            margin-top: 35px;
+            margin-top: 5vh;
             border-radius: 10px;
             backdrop-filter: blur(5px);
+            width: 100%;
+            margin-left: 0%;
+            display: flex;
+            justify-content: center;
         }
 
         .icon {
-            margin: 10px;
+            margin: 1vh;
             color: inherit;
+            cursor: pointer;
         }
 
         .website {
@@ -145,69 +145,144 @@
         .email-name {
             font-weight: bold;
         }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
     </style>
 </head>
 
 <body style="background-color: black;">
-    <div>
+    <div class="container">
 
-    
-    <div class="cover">
-        <div class="profile-pic"></div>
+
+        <div class="cover">
+            <div class="profile-pic"></div>
+        </div>
+
+        <div class="info">
+            <div class="name"></div>
+            <div class="job-title"></div>
+            <div class="about">
+            </div>
+
+            <div class="contact-buttons">
+                <a href="#" class="contact-btn">Save Contact</a>
+                <a href="#" class="contact-btn">Exchange Contact</a>
+            </div>
+
+            <div class="icon-container">
+            </div>
+
+            <div class="website">
+                <div class="website-icon"><img alt="Website Icon"
+                        style="width: 150px; height: 150px; border-radius: 25%;" id="portfolioImage"></div>
+                <div class="website-info">
+                    <div class="website-name"></div><br>
+                    <div class="website-info"></div>
+                </div>
+            </div>
+
+            <div class="email" style="display: flex; justify-content: space-between;">
+                <div class="email-icon"><img src="https://cdn.pixabay.com/photo/2014/04/03/09/58/email-309491_640.png"
+                        alt="Eamil Icon" style="width: 100px; height: 100px; border-radius: 25%;"></div>
+                <div class="email-info" style="margin-right: 100px; margin-top: 20px;">
+                    <div class="email-name">Email Me Here</div><br>
+                    <div id="dynamicEmailLink" style="text-decoration: none; color: white;"></div>
+                </div>
+            </div>
+
+            <img id="qrCode" style="height: 100px; width: 100px; margin-top: 35px;">
+        </div>
     </div>
 
-    <div class="info">
-        <div class="name">John Doe</div>
-        <div class="job-title">Software Engineer</div>
-        <div class="about">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-        </div>
+    <script>
+        const imageLinks = ["https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Tumblr2_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png",
+            "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png"]
 
-        <div class="contact-buttons">
-            <div class="row buttonsContact">
-                <a href="#" class="contact-btn w-50 col-sm-6">Save Contact</a>
-                <a href="#" class="contact-btn w-50 col-sm-6">Exchange Contact</a>
-            </div>
-        </div>
+        const infoIcons = ["fa-mobile-phone", "fa-whatsapp", "fa-envelope", "fa-globe", "fa-location-arrow"]
 
-        <div class="icon-container" style="display: flex;  justify-content: center;">
-            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png"  style=" height: 40px; width: 40px;" alt=""></div>
-            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
-            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Tumblr2_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
-            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
-            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
-            <div class="icon" ><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png" alt="" style=" height: 40px; width: 40px;" ></div>
-        </div>
+        const profileData = {
+            coverPhotoLink: "https://images.inc.com/uploaded_files/image/1920x1080/getty_509107562_2000133320009280346_351827.jpg",
+            profilePicLink: "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+            name: "John Doe",
+            jobTitle: "Developer",
+            about: "I am Good Developer",
 
-        <div class="website">
-            <div class="website-icon"><img
-                    src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                    alt="Website Icon" style="width: 150px; height: 150px; border-radius: 25%;"></div>
-            <div class="website-info">
-                <div class="website-name">NFC Biz</div><br>
-                <div>
-                    Near Field Communication (NFC) technology has emerged as a transformative force in the business
-                    landscape, offering a seamless and efficient way for devices to communicate and share information
-                    over short distances.</div>
-            </div>
-        </div>
+            contactButtons: [
+                { vcfLink: "03323427787" },
+                { vcfLink: "03323427787" }
+            ],
 
-        <div class="email" style="display: flex; justify-content: space-between;">
-            <div class="email-icon"><img
-                    src="https://cdn.pixabay.com/photo/2014/04/03/09/58/email-309491_640.png"
-                    alt="Eamil Icon" style="width: 100px; height: 100px; border-radius: 25%;"></div>
-            <div class="email-info" style="margin-right: 100px; margin-top: 20px;">
-                <div class="email-name">Email Me Here</div><br>
-                <div style="text-decoration: none;">
-                    <a href="mailto:info@nfcbiz.com" style="text-decoration: none; color: white;">info@nfcbiz.com</a></div>
-            </div>
-        </div>
 
-        <div class="qr-code" style="height: 100px; width: 100px; margin-top: 35px; display: flex; margin-left: 40%;">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?data=www.example.com" alt="QR Code" class="qr-img">
-        </div>
-    </div>
+            productImage: "https://d3vpszern3jgjo.cloudfront.net/wp-content/uploads/2021/02/Best-free-portfolio-webiste-3.jpg",
+            productTitle: "NFC BIZ",
+            productAbout: "NFC has emerged as a transformative force in the business landscape, offering a seamless and efficient way for devices to communicate and share information over short distances.",
+
+            socialIcons: [
+                { link: "https://www.facebook.com/" },
+                { link: "https://www.linkedin.com/" },
+                { link: "https://www.tumblr.com/" },
+                { link: "https://twitter.com/" },
+                { link: "https://www.youtube.com/" },
+                { link: "https://www.instagram.com/" },
+            ],
+            emailAddress: 'support@nfcbiz.com',
+            qr: "https://placekitten.com/1200/1400",
+        };
+
+        document.querySelector('.cover').style.backgroundImage = `url('${profileData.coverPhotoLink}')`;
+        document.querySelector('.profile-pic').style.backgroundImage = `url('${profileData.profilePicLink}')`;
+
+        document.querySelector('.name').textContent = profileData.name;
+        document.querySelector('.job-title').textContent = profileData.jobTitle;
+        document.querySelector('.about').textContent = profileData.about;
+
+        const iconContainer = document.querySelector('.icon-container');
+        var i = 0;
+        profileData.socialIcons.forEach(icon => {
+
+            const img = document.createElement('img');
+            img.src = imageLinks[i];
+            i++;
+            img.alt = '';
+            img.style.height = '4.25vh';
+            img.style.width = '4.25vh';
+
+            const div = document.createElement('div');
+            div.classList.add('icon');
+            if (icon.link) {
+                div.onclick = function () {
+                    window.open(icon.link);
+                };
+            }
+
+            div.appendChild(img);
+            iconContainer.appendChild(div);
+        });
+
+        portfolioImage.src = profileData.productImage;
+        document.querySelector('.website-name').textContent = profileData.productTitle;
+        document.querySelector('.website-info').textContent = profileData.productAbout;
+
+        const emailAddress = profileData.emailAddress;
+        const emailLink = document.createElement('a');
+        emailLink.href = `mailto:${emailAddress}`;
+        emailLink.style.textDecoration = 'none';
+        emailLink.style.color = 'white';
+        emailLink.textContent = emailAddress;
+
+        const emailContainer = document.getElementById('dynamicEmailLink');
+        emailContainer.appendChild(emailLink);
+
+        qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + profileData.qr;
+
+    </script>
 
 </body>
 
